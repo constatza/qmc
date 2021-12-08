@@ -33,8 +33,9 @@ def create_cirquit(amplitudes, backend=backend):
     crots = QuantumCircuit(p, ancilla, name='CRYs')
     crots.ry(alpha, ancilla[0])
     for i in range(npoints):
-        crots.cry(2**i  *theta, npoints-1-i, npoints)
-
+        #crots.cry(2**i  *theta, npoints-1-i, npoints) wrong!!!
+        crots.cry(2**i  *theta, i, npoints)
+        
     qc.append(crots, p[:] + ancilla[:])
 
     backend = Aer.get_backend('aer_simulator')
