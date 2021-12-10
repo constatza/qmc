@@ -120,7 +120,7 @@ def sum_estimation(pdf, fourier_coeffs, x_piecewise, epsilon=0.001, conf_lvl=0.0
         fourier_coeffs.real[n] *= 2*cos_sum
         fourier_coeffs.imag[n] *= 2*sin_sum
     s = fourier_coeffs.real.sum() - fourier_coeffs.imag.sum()
-    print(f'Im: {fourier_coeffs.imag.sum()}')
+    del qc
     return s
 
     

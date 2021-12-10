@@ -23,7 +23,7 @@ prob_dist = distribution.pdf(xpoints)
 plt.stem(xpoints, prob_dist)
 
 # Function 
-order = 2
+order = 4
 func = lambda x: (x )**order
 func_derivative = lambda x: order*(x )**(order-1)
 x = np.linspace(xlower, xupper_extension, 20000, endpoint=True)
